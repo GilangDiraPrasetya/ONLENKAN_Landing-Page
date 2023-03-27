@@ -1,0 +1,378 @@
+:root {
+  --primary: #c6612b;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+}
+
+html {  
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  /* min-height: 2000px; */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #534704;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 0.8rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav .active {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-icon a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-icon a:hover {
+  color: var(--primary);
+}
+
+#menu {
+  display: none;
+}
+
+/* Home */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('media/home.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.home::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0) 25%);
+}
+
+.home .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.home .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.home .content h1 span {
+  color: var(--primary);
+}
+
+.home .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+/* About */
+.about,
+.products,
+.services,
+.contact {
+  padding: 1.4rem 7%;
+}
+.about .heading,
+.products .heading,
+.contact .heading {
+  text-align: center;
+  font-size: 4rem;
+  padding: 4rem;
+  /* margin: 2rem 0; */
+}
+
+.about .heading span,
+.products .heading span,
+.contact .heading span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+}
+
+.about .row .video-container {
+  flex: 1 1 40rem;
+  position: relative;
+}
+
+.about .row .video-container video {
+  width: 100%;
+  height: 100%;
+  border: 0.5rem solid var(--primary);
+  border-radius: 0.8rem;
+  object-fit: cover;
+}
+
+.about .row .video-container h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--bg);
+  background: var(--primary);
+  width: 100%;
+  text-align: center;
+  mix-blend-mode: screen;
+}
+
+.about .row .content {
+  flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+}
+
+.about .row .content p {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  line-height: 1.5;
+}
+
+/* Seriveces */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 7rem;
+}
+
+.services .icons {
+  border: 0.5rem solid var(--primary);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex: content;
+}
+
+.services .icons img {
+  height: 5rem;
+  margin-right: 2rem;
+}
+
+/* Products */
+.products {
+  padding: 3rem;
+}
+
+.products p,
+.contact p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.products .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.products .row .products-card {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.products .row .products-card img {
+  width: 30rem;
+  height: 30rem;
+  object-fit: contain;
+  
+}
+
+.products .row .products-card h3 {
+  margin: 1rem auto 0.5rem;
+}
+
+/* Contact */
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  border: 1px solid #fff;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--bg);
+    width: 25rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row .content {
+    flex: 1 1 40rem;
+    text-align: center;
+  }
+}
+
+/* Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
